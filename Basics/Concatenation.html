@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Concatenation</h1>
+
+<p>Adding 1 + 2 + "3" is:</p>
+<p id="num1"></p>
+
+<p>Adding "5" + 6 + 7 is:</p>
+<p id="num2"></p>
+
+
+<script>
+//var is only if I have to support older browsers
+let x = 1 + 2 + "3"; //33
+let y = "5" + 6 + 7; //567
+
+document.getElementById("num1").innerHTML = x;
+document.getElementById("num2").innerHTML = y;
+
+</script>
+
+</body>
+</html>
