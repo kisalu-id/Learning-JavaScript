@@ -33,3 +33,19 @@ let d, e, f;
 d = e = f = 10 + 5; 
 
 alert(d, e, f); // 15
+
+
+for (g = 1, h = 6, i = g * h; g <=1 ; g++) {
+  //only the last expression after comma is evaluated
+  let j = 10 + (g += 20)
+  console.log("j is: " + j); //31
+  console.log("g is: " + g); //21
+}
+
+let k = (3+4, 5+6);
+console.log ("k is: " + k); //11
+
+let l = 2;
+l -= 5 - 4 + ""; //right part gets evaluated first
+
+alert("l is: " + l); //1
