@@ -1,30 +1,30 @@
 //access control system that gives user rights to read, edit, runs and delete files, by using bitwise operators
-
 const acc = Object.freeze({
-  none: 0,
-  read: 1,
-  edit: 2,
-  run: 4,
-  del: 8
+  none: 1,
+  read: 2,
+  edit: 4,
+  run: 8,
+  del: 16
 });
 
-let msg;
-let myAcc = acc.run;
+let myAcc = acc.edit | acc. run | acc.del;
 //acc.read | acc.edit;
-
-if (myAcc & acc.read) {
-  msg = 'you can only read the file';
-} else if (myAcc & acc.edit) {
-  msg = 'you can read and edit the file';
-} else if (myAcc & acc.run) {
-  msg = 'you can execute the file';
-} else if (myAcc & acc.del) {
-  msg = 'you have admin rights';
+if (myAcc & acc.none) {
+  console.log('Access denied');
+  
 } else {
-  msg = 'access denied';
+  console.log('Your permissions are to');
+  if (myAcc & acc.read) {
+    console.log('read');
+  } if (myAcc & acc.edit) {
+    console.log('edit');
+  } if (myAcc & acc.run) {
+    console.log('execute');
+  } if (myAcc & acc.del) {
+    console.log('delete');
+  }
+console.log('the file.');
 }
-
-console.log(msg);
 
 let binaryText = myAcc.toString(2);
 console.log('binary code for your rights is: ' + binaryText);
