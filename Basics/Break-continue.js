@@ -9,3 +9,12 @@ while (number <= 20) {
     }
     number += 1;
 }
+
+//print only even numbers using break statement
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 !== 0) {
+        //stops the current iteration and continues to the next iteration
+        continue;
+    }
+    console.log(i);
+}
